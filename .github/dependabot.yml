@@ -6,8 +6,6 @@ updates:
       - dependency-type: "all"
     schedule:
       interval: "monthly"
-    reviewers:
-      - "SCedricThomas"
     groups:
       dependencies:
         patterns:
