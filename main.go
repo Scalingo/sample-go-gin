@@ -26,6 +26,7 @@ func isPrime(value int) bool {
 func main() {
 	m := gin.Default()
 	m.LoadHTMLGlob("templates/*")
+	srv := &http.Server{Handler: m, ReadHeaderTimeout: 10 * time.Second}
 
 	m.GET("/", func(c *gin.Context) {
 		waitQuery := c.Request.URL.Query().Get("wait")
@@ -57,7 +58,7 @@ func main() {
 		panic(err)
 	}
 
-	go http.Serve(listener, m)
+	go srv.Serve(listener)
 	log.Println("Listening on 0.0.0.0:" + port)
 
 	sigs := make(chan os.Signal)
