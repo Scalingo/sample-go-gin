@@ -1,0 +1,7 @@
+dependencies = []
+description = "Go/Gin sample application"
+languages = ["dockerfile", "go"]
+owner = "devrel@scalingo.com"
+team = "devrel"
+version = "1.0.2"
+tier = 2
