@@ -1,4 +1,4 @@
-FROM golang:1.26.2
+FROM golang:1.26.5
 
 RUN go install github.com/cespare/reflex@latest
 ADD . /go/src/github.com/Scalingo/sample-go-gin
